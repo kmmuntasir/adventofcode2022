@@ -1,2 +1,8 @@
 .idea
 .idea/*
+
+# To ignore the executable files
+solution
+
+# To ignore the object files
+*.o
