@@ -48,8 +48,30 @@ Some of the pairs have noticed that one of their assignments fully contains th
 
 In how many assignment pairs does one range fully contain the other?
 
-To begin, [get your puzzle input](https://adventofcode.com/2022/day/4/input).
+Your puzzle answer was `651`.
 
-Answer:  
+--- Part Two ---
+----------------
 
-You can also [Share[](https://twitter.com/intent/tweet?text=%22Camp+Cleanup%22+%2D+Day+4+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F4&related=ericwastl&hashtags=AdventOfCode)] this puzzle.
+It seems like there is still quite a bit of duplicate work planned. Instead, the Elves would like to know the number of pairs that overlap at all.
+
+In the above example, the first two pairs (`2-4,6-8` and `2-3,4-5`) don't overlap, while the remaining four pairs (`5-7,7-9`, `2-8,3-7`, `6-6,4-6`, and `2-6,4-8`) do overlap:
+
+-   `5-7,7-9` overlaps in a single section, `7`.
+-   `2-8,3-7` overlaps all of the sections `3` through `7`.
+-   `6-6,4-6` overlaps in a single section, `6`.
+-   `2-6,4-8` overlaps in sections `4`, `5`, and `6`.
+
+So, in this example, the number of overlapping assignment pairs is `4`.
+
+In how many assignment pairs do the ranges overlap?
+
+Your puzzle answer was `956`.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
+
+At this point, you should [return to your Advent calendar](https://adventofcode.com/2022) and try another puzzle.
+
+If you still want to see it, you can [get your puzzle input](https://adventofcode.com/2022/day/4/input).
+
+You can also [Share[](https://twitter.com/intent/tweet?text=I%27ve+completed+%22Camp+Cleanup%22+%2D+Day+4+%2D+Advent+of+Code+2022&url=https%3A%2F%2Fadventofcode%2Ecom%2F2022%2Fday%2F4&related=ericwastl&hashtags=AdventOfCode)] this puzzle.
