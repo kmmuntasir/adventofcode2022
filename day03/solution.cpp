@@ -2,11 +2,18 @@
 
 using namespace std;
 
+int getPriority(char item) {
+    return item > 97 ? item - 96 : item - 38;
+}
+
 int main() {
     freopen("input.txt", "r", stdin);
 
     string rucksack;
+    string group[3];
     int totalPriority = 0;
+    int totalBadgePriority = 0;
+    int groupCounter = 0;
 
     while(getline(cin, rucksack)) {
         map<char, bool> traceFirst;
@@ -27,10 +34,37 @@ int main() {
                 traceFirst[p] = traceSecond[q] = true;
             }
         }
-        totalPriority += (duplicate > 97) ? duplicate - 96 : duplicate - 38;
+        totalPriority += getPriority(duplicate);
+
+        group[groupCounter++] = rucksack; // Part 2 logic
+        if(groupCounter == 3) {
+            groupCounter = 0;
+            map<char, bool> traceFirstGroup;
+            map<char, bool> traceSecondGroup;
+            char badge;
+
+            for(int i = 0; i < group[0].size(); ++i) {
+                traceFirstGroup[group[0][i]] = true;
+            }
+
+            for(int i = 0; i < group[1].size(); ++i) {
+                traceSecondGroup[group[1][i]] = true;
+            }
+
+            for(int i = 0; i < group[2].size(); ++i) {
+                char x = group[2][i];
+                if(traceFirstGroup[x] && traceSecondGroup[x]) {
+                    badge = x;
+                    break;
+                }
+            }
+
+            totalBadgePriority += getPriority(badge);
+        }
     }
 
     cout << "Total Priority: " << totalPriority << endl;
+    cout << "Total Badge Priority: " << totalBadgePriority << endl;
 
     return 0;
 }
